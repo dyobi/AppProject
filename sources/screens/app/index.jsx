@@ -4,15 +4,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import Octicons from 'react-native-vector-icons/Octicons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import Home from '../nav/home';
-import Profile from '../nav/profile';
+import Map from '../nav/map';
 import Chat from '../nav/chat';
 
 const Tab = createMaterialTopTabNavigator();
 
 const iconSize = RFValue(18, 580);
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -26,6 +28,7 @@ const Tabs = () => {
         activeTintColor: 'black',
         inactiveTintColor: 'gray',
         showIcon: true,
+        showLabel: false,
         labelStyle: {
           fontSize: RFValue(8, 580),
           textTransform: 'none'
@@ -57,19 +60,17 @@ const Tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" color={color} size={iconSize} />
+            <Octicons name="home" color={color} size={iconSize} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Map"
+        component={Map}
         options={{
-          tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" color={color} size={iconSize} />
+            <SimpleLineIcons name="map" color={color} size={RFValue(16, 580)} />
           ),
         }}
       />
@@ -77,9 +78,8 @@ const Tabs = () => {
         name="Chat"
         component={Chat}
         options={{
-          tabBarLabel: 'Chat',
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" color={color} size={iconSize} />
+            <Octicons name="comment-discussion" color={color} size={iconSize} />
           ),
         }}
       />

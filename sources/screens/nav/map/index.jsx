@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
-const Home = () => {
+const Map = () => {
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
+            <Text>Map</Text>
         </View>
     );
 }
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Home;
+export default Map;
