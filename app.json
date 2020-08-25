@@ -17,7 +17,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.status.luke",
+      "config": {
+        "googleMapsApiKey": "KEY"
+      }
+    },
+    "android": {
+      "package": "com.status.luke",
+      "config": {
+        "googleMaps": {
+          "apiKey": "KEY"
+        }
+      }
     },
     "web": {
       "favicon": "./sources/assets/favicon.png"
